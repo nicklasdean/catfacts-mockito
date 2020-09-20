@@ -11,9 +11,3 @@ This  example will showcase basic mockito.
 - The objective is to  to isolate and limit the testing scope (we do not want to test the online service)
 - This is done by mocking (creating a fake object) that returns local test-data and injecting that into the service that is undergoing tests
 - Note: The example is using manual dependency injection for clarity & underlining the synergy between DI, testing & mocking.
-
-The endpoints are:  
-*/getSingle  
-*/getTen   
-*/getTenSortedByDate   
-*/getCatIfContainsLetter?c={character}&n={amont}  
