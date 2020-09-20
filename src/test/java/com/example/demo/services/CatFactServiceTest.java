@@ -53,21 +53,6 @@ class CatFactServiceTest {
         verify(mockedFetcher, times(10)).fetchSingleCatFact();
     }
 
-    @Test
-    public void getTenWithSpy() throws IOException {
-        //Mocked service we want to test - using a spy.
-        CatFactService mockService;
-
-        //Instantiating the mock service with the mocked fetcher object
-        mockService = Mockito.mock(CatFactService.class);
-
-        //Verify that the getSingleCatFact() method calls the fetcher 10 times exactly by the service .getTen() Method
-        mockService.getTen();
-
-        //Spying on the service and verifying the method is being called exactly once
-        verify(mockService, times(1)).getTen();
-    }
-
     private CatFact fetchSingleLocalCatFact() throws FileNotFoundException {
         //Reading a local json test-file (instead of fetching)
         JsonReader catfactReader = new JsonReader(new FileReader(new File("src/test/resources/catfact.json")));
