@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.models.CatFact;
+import com.example.demo.repositories.CatFactFetcher;
 import com.example.demo.services.CatFactService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +14,7 @@ import java.util.ArrayList;
 @Controller
 public class CatFactController {
     //Instantiating as an attribute to the controller - all mappings can use the service
-    CatFactService catFactService = new CatFactService();
-
-    //Throwing all exceptions - not good practice, but not the focus of this exercise
-    public CatFactController() throws IOException {
-    }
+    CatFactService catFactService = new CatFactService(new CatFactFetcher());
 
     //Welcome message
     @GetMapping("/")
